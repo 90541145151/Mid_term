@@ -1,0 +1,189 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Garamond', serif;
+    color: #444;
+    background-color: #fefefe;
+    line-height: 1.7;
+    animation: fadeInPage 1s ease-in;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+}
+
+.logo {
+    height: 50px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffdd57;
+    text-shadow: 0 0 5px #ffdd57, 0 0 10px #ffdd57;
+}
+
+/* Main Content */
+main {
+    padding: 2em;
+    text-align: center;
+    animation: fadeInContent 1.2s ease-in-out 0.5s both;
+}
+
+@keyframes fadeInContent {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Intro Section */
+.intro {
+    margin-bottom: 2em;
+}
+
+/* Typing Effect for Tagline */
+.tagline {
+    font-size: 1.8em;
+    color: #ffdd57;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ffdd57;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Featured Product Image */
+.feature img,
+.collection img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: buttonFlashBorder 2s ease-in-out infinite;
+}
+
+@keyframes buttonFlashBorder {
+    0% { box-shadow: 0 0 5px #ffdd57, 0 0 10px #ffdd57; }
+    50% { box-shadow: 0 0 15px #ffdd57, 0 0 30px #ffdd57; }
+    100% { box-shadow: 0 0 5px #ffdd57, 0 0 10px #ffdd57; }
+}
+
+.cta-button:hover {
+    background-color: #ffdd57;
+    color: #333;
+    transform: scale(1.1);
+}
+
+/* Scroll-Up Animation */
+.scroll-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glow on Hover for Text */
+.glow:hover {
+    text-shadow: 0 0 5px #ffdd57, 0 0 10px #ffdd57, 0 0 15px #ffdd57;
+    transition: text-shadow 0.5s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    margin-top: 3em;
+}
+
+/* Responsive Styling */
+@media (min-width: 600px) {
+    nav ul {
+        gap: 1.5em;
+    }
+    main {
+        padding: 3em;
+    }
+}
